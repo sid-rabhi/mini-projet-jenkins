@@ -5,6 +5,6 @@ RUN apt-get update && \
     apt-get install -y curl git
 
 RUN rm -Rf /usr/share/nginx/html/* && \
-    git clone https://github.com/diranetafen/static-website-example.git /usr/share/nginx/html
+    git clone https://github.com/sid-rabhi/static-website-example.git /usr/share/nginx/html
 
 CMD nginx -g 'daemon off;'
