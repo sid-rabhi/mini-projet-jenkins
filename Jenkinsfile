@@ -6,15 +6,13 @@ pipeline {
         IMAGE_NAME = "staticwebsite"
         APP_EXPOSED_PORT = "80"
         IMAGE_TAG = "latest"
-        // STAGING = "chocoapp-staging"
-        // PRODUCTION = "chocoapp-prod"
-        DOCKERHUB_ID = "choco1992"
+        DOCKERHUB_ID = "sidrabhi"
         DOCKERHUB_PASSWORD = credentials('dockerhub_password')
-        APP_NAME = "ulrich"
-        STG_API_ENDPOINT = "172.28.128.141:1993"
-        STG_APP_ENDPOINT = "172.28.128.141:${PORT_EXPOSED}90"
-        PROD_API_ENDPOINT = "172.28.128.141:1993"
-        PROD_APP_ENDPOINT = "172.28.128.141:${PORT_EXPOSED}"
+        APP_NAME = "sid"
+        STG_API_ENDPOINT = "192.168.56.5:1993"
+        STG_APP_ENDPOINT = "192.168.56.5:${PORT_EXPOSED}90"
+        PROD_API_ENDPOINT = "192.168.56.5:1993"
+        PROD_APP_ENDPOINT = "192.168.56.5:${PORT_EXPOSED}"
         INTERNAL_PORT = "80"
         EXTERNAL_PORT = "${PORT_EXPOSED}"
         CONTAINER_IMAGE = "${DOCKERHUB_ID}/${IMAGE_NAME}:${IMAGE_TAG}"
@@ -25,7 +23,7 @@ pipeline {
            agent any
            steps {
               script {
-                sh 'docker build -t ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG ./mini-projet-jenkins/'
+                sh 'docker build -t ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG .'
               }
            }
        }
@@ -90,7 +88,7 @@ pipeline {
      }
      stage('PROD - Deploy app') {
        when {
-           expression { GIT_BRANCH == 'origin/main' }
+           expression { GIT_BRANCH == 'origin/master' }
        }
      agent any
 
