@@ -32,7 +32,7 @@ pipeline {
             script {
               sh '''
                   echo "Cleaning existing container if exist"
-                  docker ps -a | grep -i ${IMAGE_NAME} && docker rm -f ${IMAGE_NAME}
+                  docker ps -a | grep -i ${IMAGE_NAME} | awk '{print $1}' | xargs -I {} docker rm -f {}
                   docker run --name ${IMAGE_NAME} -d -p ${APP_EXPOSED_PORT}:${INTERNAL_PORT}  ${DOCKERHUB_ID}/${IMAGE_NAME}:${IMAGE_TAG}
                   sleep 5
               '''
