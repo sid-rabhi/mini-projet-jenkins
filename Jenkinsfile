@@ -7,7 +7,6 @@ pipeline {
         APP_EXPOSED_PORT = "80"
         IMAGE_TAG = "latest"
         DOCKERHUB_ID = "sidrabhi"
-       // DOCKERHUB_PASSWORD = credentials('DOCKER_CRED')
         APP_NAME = "sid"
         STG_API_ENDPOINT = "192.168.56.5:1993"
         STG_APP_ENDPOINT = "192.168.56.5:${PORT_EXPOSED}90"
@@ -23,7 +22,7 @@ pipeline {
            agent any
            steps {
               script {
-                sh 'docker build -t ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG .'
+                sh 'docker build -t ${DOCKERHUB_ID}/$IMAGE_NAME:${IMAGE_TAG} .'
               }
            }
        }
