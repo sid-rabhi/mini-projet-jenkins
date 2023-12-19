@@ -7,7 +7,7 @@ pipeline {
         APP_EXPOSED_PORT = "80"
         IMAGE_TAG = "latest"
         DOCKERHUB_ID = "sidrabhi"
-        DOCKERHUB_PASSWORD = credentials('DOCKER_CRED')
+       // DOCKERHUB_PASSWORD = credentials('DOCKER_CRED')
         APP_NAME = "sid"
         STG_API_ENDPOINT = "192.168.56.5:1993"
         STG_APP_ENDPOINT = "192.168.56.5:${PORT_EXPOSED}90"
@@ -33,8 +33,8 @@ pipeline {
             script {
               sh '''
                   echo "Cleaning existing container if exist"
-                  docker ps -a | grep -i $IMAGE_NAME && docker rm -f $IMAGE_NAME
-                  docker run --name $IMAGE_NAME -d -p $APP_EXPOSED_PORT:$INTERNAL_PORT  ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG
+                  docker ps -a | grep -i ${IMAGE_NAME} && docker rm -f ${IMAGE_NAME}
+                  docker run --name ${IMAGE_NAME} -d -p ${APP_EXPOSED_PORT}:${INTERNAL_PORT}  ${DOCKERHUB_ID}/${IMAGE_NAME}:${IMAGE_TAG}
                   sleep 5
               '''
              }
@@ -45,7 +45,7 @@ pipeline {
            steps {
               script {
                 sh '''
-                   curl -v 172.17.0.1:$APP_EXPOSED_PORT | grep -i "Dimension"
+                   curl -v 172.17.0.1:${APP_EXPOSED_PORT} | grep -i "Dimension"
                 '''
               }
            }
@@ -55,8 +55,8 @@ pipeline {
           steps {
              script {
                sh '''
-                   docker stop $IMAGE_NAME
-                   docker rm $IMAGE_NAME
+                   docker stop ${IMAGE_NAME}
+                   docker rm ${IMAGE_NAME}
                '''
              }
           }
@@ -68,7 +68,7 @@ pipeline {
              script {
                   withCredentials([string(credentialsId: 'dockerhub_pass', variable: 'DOCKERHUB_PASSWORD')]) {
             sh """
-                echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_ID --password-stdin
+                echo ${DOCKERHUB_PASSWORD} | docker login -u $DOCKERHUB_ID --password-stdin
                 docker push ${DOCKERHUB_ID}/${IMAGE_NAME}:${IMAGE_TAG}
             """
         }
