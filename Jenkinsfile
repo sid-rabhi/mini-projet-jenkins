@@ -39,7 +39,7 @@ pipeline {
              }
           }
        }
-       stage('Test image') {
+       stage('Test application') {
            agent any
            steps {
               script {
