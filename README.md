@@ -62,7 +62,7 @@ LinkedIn : https://www.linkedin.com/in/sid-ahmed-rabhi/
 ![webapp](images/ngrok.png "webapp")
 
 
-## Aperçu du Dockerhub
+## Aperçu du Docker Hub
 
 ![webapp](images/dockerhub.png "webapp")
 
@@ -78,3 +78,21 @@ LinkedIn : https://www.linkedin.com/in/sid-ahmed-rabhi/
 
 ![webapp](images/app.png "webapp")
 
+
+
+
+
+## Technologies utilisées
+
+- *Jenkins* : Utilisé pour automatiser les étapes de CI/CD.
+- *Docker* : Utilisé pour encapsuler l'application en conteneurs et simplifier le déploiement.
+- *Ngrok* : Permet l'exposition d'un serveur Jenkins local en lui attribuant une adresse IP publique.
+- *Docker Hub* : Plateforme de registre pour stocker et gérer les images Docker.
+- *GitHub Webhook* : Déclenche automatiquement les workflows Jenkins à chaque modification du projet sur GitHub, assurant une intégration continue.
+- *Slack* : Intégration pour les notifications en temps réel des résultats des processus automatisés.
+- *API Eazylabs* : Employée pour le déploiement sur les environnements de staging et de production.
+
+
+## Conclusion
+
+Ce projet a démontré l'efficacité de l'automatisation des processus de CI/CD à l'aide d'outils tels que Jenkins, Docker, Ngrok, Slack et GitHub Webhook. L'intégration continue, les tests automatisés et les déploiements ont été orchestrés de manière fluide, garantissant ainsi une approche fiable pour la construction, les tests et le déploiement de l'application. L'utilisation de ces technologies a facilité la gestion des environnements et des déploiements, assurant la disponibilité et la qualité de l'application déployée.
