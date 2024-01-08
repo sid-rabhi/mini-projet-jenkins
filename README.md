@@ -47,23 +47,10 @@ LinkedIn : https://www.linkedin.com/in/sid-ahmed-rabhi/
    - *Authentification avec des credentials sécurisés* : Les identifiants requis pour accéder à Docker Hub sont gérés comme des credentials de type secret dans Jenkins. Ces informations d'identification sécurisées permettent d'authentifier et d'autoriser l'envoi sécurisé de l'image construite vers mon Docker Hub.
    - *Transfert de l'image* : Une fois l'authentification réussie, l'image Docker construite est transférée vers le registre Docker Hub.
    
-   
-5. **Stop review**
-   - *Condition* : S'exécute lorsqu'une merge request est fermée ou acceptée.
-   
+5. **Déploiement sur STAGING**
+   - Déploiement de l'application sur l'environnement de staging en utilisant l'API Eazylabs.
 
-6. **Deploy staging**
-   - *Condition* : S'exécute lorsqu'un commit est poussé sur la branche `main`.
-   - Déploie l'application dans un environnement de préproduction (staging) sur Heroku.
-   
-7. **Test staging**
-   - *Condition* : S'exécute après le déploiement réussi dans l'environnement de préproduction.
-   - Exécute un curl sur l'environnement de préproduction pour s'assurer que l'application fonctionne correctement.
-   
-8. **Deploy prod**
-    - *Condition* : S'exécute lorsqu'un commit est poussé sur la branche `main`.
-   - Déploie l'application dans l'environnement de production sur Heroku.
-   
-9. **Test prod**
-   - *Condition* : S'exécute après le déploiement réussi dans l'environnement de production.
-   - Exécute un curl sur l'environnement de production pour garantir le bon fonctionnement de l'application.
+6. **Déploiement sur PRODUCTION**
+   - Déploiement de l'application sur l'environnement de production en utilisant l'API Eazylabs lorsque la branche Git est 'origin/master'.
+
+
