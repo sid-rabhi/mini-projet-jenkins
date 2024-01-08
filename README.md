@@ -44,8 +44,8 @@ LinkedIn : https://www.linkedin.com/in/sid-ahmed-rabhi/
    - *Nettoyage des conteneurs* : Arrêt et suppression du conteneur Docker utilisé pour les tests de l'application, assurant un environnement propre après l'exécution des tests.
 
 4. **Envoi de l'image Docker vers Docker Hub**
-   - *Authentification avec des credentials sécurisés* : SLes identifiants requis pour accéder à Docker Hub sont gérés comme des credentials de type secret dans Jenkins. Ces informations d'identification sécurisées permettent d'authentifier et d'autoriser l'envoi sécurisé de l'image construite vers mon Docker Hub.
-   - *Transfert de l'image* : Une fois l'authentification réussie, l'image Docker construite est transférée vers le registre Docker Hub
+   - *Authentification avec des credentials sécurisés* : Les identifiants requis pour accéder à Docker Hub sont gérés comme des credentials de type secret dans Jenkins. Ces informations d'identification sécurisées permettent d'authentifier et d'autoriser l'envoi sécurisé de l'image construite vers mon Docker Hub.
+   - *Transfert de l'image* : Une fois l'authentification réussie, l'image Docker construite est transférée vers le registre Docker Hub.
    
    
 5. **Stop review**
