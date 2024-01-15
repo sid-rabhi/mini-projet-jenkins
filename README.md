@@ -12,12 +12,6 @@ Le fichier `Jenkinsfile` contient les étapes détaillées du pipeline, intégra
 
 Auteur : Sid Ahmed Rabhi
 
-Contexte : formation Bootcamp DevOps promotion 16
-
-Centre de formation : Eazytraining
-
-Période : novembre-décembre-janvier
-
 Date : 06 janvier 2024
 
 LinkedIn : https://www.linkedin.com/in/sid-ahmed-rabhi/
