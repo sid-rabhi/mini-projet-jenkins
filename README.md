@@ -1,3 +1,14 @@
+Auteur : Sid Ahmed Rabhi
+
+Date : 06 janvier 2024
+
+LinkedIn : https://www.linkedin.com/in/sid-ahmed-rabhi/
+
+Portfolio : https://www.sid-rabhi.fr/
+
+---
+
+
 # Mini-projet Jenkins
 
 ![pipeline ci/cd](images/CICD.png "pipeline ci/cd")
@@ -7,14 +18,6 @@ Pour permettre l'intégration continue malgré un serveur Jenkins local, j'ai ut
 De plus, des notifications sur **Slack** ont été intégrées dans le pipeline en utlisant ma propre libraire https://github.com/sid-rabhi/sid-slack-shared-library/ pour informer en temps réel des résultats des différents processus automatisés .
 Pour les étapes de déploiement sur les environnements de staging et de production, j'utilise l'API Eazylabs https://github.com/eazytraining/eazylabs/ . 
 Le fichier `Jenkinsfile` contient les étapes détaillées du pipeline, intégrant des processus de construction, de tests automatisés et de déploiement. Ce rapport fournit un aperçu complet du fonctionnement de chaque étape du pipeline, en mettant en évidence les avantages et les possibilités offertes par cette approche automatisée.
-
----
-
-Auteur : Sid Ahmed Rabhi
-
-Date : 06 janvier 2024
-
-LinkedIn : https://www.linkedin.com/in/sid-ahmed-rabhi/
 
 ---
 
