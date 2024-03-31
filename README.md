@@ -9,7 +9,7 @@ Portfolio : https://www.sid-rabhi.fr/
 ---
 
 
-# Mini-projet Jenkins
+# Mini-projet Jenkins 2024
 
 ![pipeline ci/cd](images/CICD.png "pipeline ci/cd")
 
